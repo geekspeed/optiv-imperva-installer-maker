@@ -2,7 +2,12 @@
 This tool was created to bundle up Imperva Agents for a hands-free install. While Imperva ships bsx files for agent installs, the install requires running multiple scripts in a certain sequence to make sure everything is normal. This installer maker packages up a single bsx that will choose the correct agent file to install, installs it, installs the installation manager, registers the agent with a single primary gateway, and then starts the agent. This was created for a client who had a very particular need, but I found that it could be usefull to others. The only requirements are having Make installed to run the makefiles.
 
 ##Creating the installer
-In the current directory:
+Move to the optiv-installer-maker directory
+```
+cd optiv-installer-maker
+```
+To start the installer maker, just type make:
+
 ```
 make
 ```
