@@ -25,3 +25,33 @@ Once the installer has been uploaded to your database server
 ```
 ./installer-name.bsx
 ```
+![Decompress Screen](images/image4.png?raw=true "Decompress Screen")
+
+The archive will start to decompress into a tmp directory in /tmp. Once decompression is done, the installer will start.
+
+![Installer Screen](images/image5.png?raw=true "Installer Screen")
+
+From here the installer will run ```which_ragent_package_0089.sh``` script to determine the appropriate agent. Once an agent has been identified, the agent will be pulled from the 'agent' directory and untar'd into the 'work' directory. The agent bsx file will be executed in silent mode with a destination dir set to '/opt/imperva' e.g:
+```
+./work/Imperva-ragent-RHEL-v7-kSMP-px86_64-b11.5.0.2032.bsx -n -d /opt/imperva
+```
+
+When that completes successfully the installation manager will be installed as well:
+```
+./work/Imperva-ragentinstaller-RHEL-v7-kSMP-px86_64-b1.0.0.5009.bsx -n -d /opt/imperva
+```
+
+After that is completed, the agents are then registered. The ragent-name is supplied with the value of the ```hostname``` command. The Gateway and Password are the values supplied during the installer maker.
+```
+/opt/imperva/ragent/bin/cli --dcfg /opt/imperva/ragent/etc --dtarget /opt/imperva/ragent/etc --dlog /opt/imperva/ragent/etc/logs/cli --dvar /opt/imperva/ragent/var registration advanced-register registration-type=Primary ragent-name=$HOSTNAME gw-ip=10.10.10.1 gw-port=443 manual-settings-activation=Automatic monitor-network-channels=Local password=password1
+```
+
+When that has completed successfully. The agent is turned on with:
+```
+/opt/imperva/ragent/bin/rainit start
+```
+
+And we exit. Pretty simple.
+
+##Next steps
+Feel free to issue pull requests, or fix any glaring errors i have. This has only been tested on RHEL boxes in my lab, so who knows what bugs might be in it.
