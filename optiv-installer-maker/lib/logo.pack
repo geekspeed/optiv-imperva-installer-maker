@@ -1,0 +1,35 @@
+function logo {
+	local GRAYBACK="\e[0;5;37;47m"
+	local RED="\e[31m"
+	local REDD="\e[38;5;124m"
+	local REDDD="\e[38;5;196m"
+	local P="\e[38;5;197m"
+	local LIGHT_RED="\e[91m"
+	local YELLOW="\e[33m"
+	local LIGHT_YELLOW="\e[93m"
+	local WHITE="\e[97m"
+	local BLUE="\e[34m"
+	local RESET="\e[0m"
+	local NOBLINK="\e[25m"
+	cat ./lib/.logo
+	echo -en "$GRAYBACK" 
+	echo -en "$NOBLINK"
+	echo -en "$BLUE"
+	echo -en "                     OPTIV "
+	echo -en "$LIGHT_RED"
+	echo -en "Imperva "
+	echo -en "$RED"
+	echo -en "Agent "
+	echo -en "$REDD"
+	echo -en "Installer Maker "
+	echo -e  "                       $RESET"
+	echo -en "$GRAYBACK"
+	echo -en "                                                                                "
+	echo -e "$RESET"
+
+
+
+
+
+
+}

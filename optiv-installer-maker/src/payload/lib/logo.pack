@@ -1,0 +1,20 @@
+function logo {
+	local GRAYBACK="\e[0;5;37;47m"
+	local RED="\e[31m"
+	local REDD="\e[38;5;124m"
+	local REDDD="\e[38;5;196m"
+	local P="\e[38;5;197m"
+	local LIGHT_RED="\e[91m"
+	local YELLOW="\e[33m"
+	local LIGHT_YELLOW="\e[93m"
+	local WHITE="\e[97m"
+	local RESET="\e[0m"
+	cat ./lib/.logo
+	echo -e "$GRAYBACK $RED Imperva Agent Installer [$HOSTNAME]                    $RESET"
+
+
+
+
+
+
+}

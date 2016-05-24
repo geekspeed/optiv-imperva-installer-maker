@@ -1,0 +1,24 @@
+#!/bin/bash
+
+source ./lib/logo.pack
+VERS=11.5.0
+AGENTDIR="./agent/"
+
+reset
+logo
+echo "Determining correct Imperva Agent"
+
+LATEST=`./bin/which_ragent_package_0089.sh -v $VERS | grep Latest`
+FILEA=($LATEST)
+FILE=${FILEA[5-1]}
+if [ -f $AGENTDIR$FILE ]
+then
+	echo -ne "$RED Archive was found: "
+        echo -e "$AGENTDIR$FILE $RESET"
+	echo "Running install scripts..."
+	make
+
+else
+	echo "No Agent could be found that matches your kernel"
+        exit 1
+fi
