@@ -7,12 +7,12 @@ In the current directory:
 make
 ```
 This will start the installer builder.
-[image1]:./images/image1.png
+[image1]:https://raw.githubusercontent.com/geekspeed/optiv-imperva-installer-maker/master/images/image1.png
 Type in the name for the installation package. The name will be prepended with -installer.bsx and placed in the current directory when the script is finished.
-[image2]:./images/image2.png
+[image2]:https://raw.githubusercontent.com/geekspeed/optiv-imperva-installer-maker/master/images/image2.png
 Type in the ip (or hostname) of the gateway the agent will auto-register to. All agents deployed via this script will auto-register to a single gateway. It works best to create packages for each gateway.
 Type in the password for the gateway. The password WILL be echo'd to the terminal.
-[image3]:./images/image3.png
+[image3]:https://raw.githubusercontent.com/geekspeed/optiv-imperva-installer-maker/master/images/image1.png
 The installer maker will do it's thing and build your bsx file. This file will contain all the latest agents (as of 5/20/2016) - it does not fetch the current ones -- just a static set I compiled. When it's done it will show you the bsx name, the gateway and the password.
 
 ##Running the installer package
